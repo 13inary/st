@@ -2133,7 +2133,9 @@ run:
 	xinit(cols, rows);
 	xsetenv();
 	selinit();
-	chdir(opt_dir);
+	if (chdir(opt_dir)) {
+		printf("chdir");
+	}
 	run();
 
 	return 0;
